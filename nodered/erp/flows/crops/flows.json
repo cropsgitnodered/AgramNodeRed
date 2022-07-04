@@ -2947,7 +2947,7 @@
                 "t": "set",
                 "p": "inbounddir",
                 "pt": "msg",
-                "to": "msg.filedir & '/inbound'",
+                "to": "$env('INTERFACE_DOWNLOAD_DIR') & '/inbound'",
                 "tot": "jsonata"
             }
         ],
