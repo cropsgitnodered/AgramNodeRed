@@ -246,11 +246,11 @@
         "in": [],
         "out": [
             {
-                "x": 740,
-                "y": 140,
+                "x": 1040,
+                "y": 120,
                 "wires": [
                     {
-                        "id": "eec904c87131136c",
+                        "id": "ba6d59886900ec89",
                         "port": 0
                     }
                 ]
@@ -2930,6 +2930,33 @@
         "to": "",
         "reg": false,
         "x": 600,
+        "y": 140,
+        "wires": [
+            [
+                "ba6d59886900ec89"
+            ]
+        ]
+    },
+    {
+        "id": "ba6d59886900ec89",
+        "type": "change",
+        "z": "f510047e.e49ad8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "inbounddir",
+                "pt": "msg",
+                "to": "msg.filedir & '/inbound'",
+                "tot": "jsonata"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 810,
         "y": 140,
         "wires": [
             []
@@ -12668,8 +12695,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 3580,
-        "y": 500,
+        "x": 3740,
+        "y": 460,
         "wires": []
     },
     {
@@ -13804,11 +13831,12 @@
         "destFilename": "file",
         "destFilenameType": "msg",
         "link": false,
-        "x": 3190,
-        "y": 440,
+        "x": 3470,
+        "y": 460,
         "wires": [
             [
-                "3dcbf47d.feba4c"
+                "3dcbf47d.feba4c",
+                "47e69ff7f11bb885"
             ]
         ]
     },
@@ -13974,6 +14002,27 @@
                 "dc0ce44a625f76b3",
                 "9bb3de9f4ac8db41"
             ]
+        ]
+    },
+    {
+        "id": "47e69ff7f11bb885",
+        "type": "fs-ops-copy",
+        "z": "363c53b3.cabc2c",
+        "name": "CopyInboundIdocForWeighingApp",
+        "sourcePath": "archivedir",
+        "sourcePathType": "msg",
+        "sourceFilename": "file",
+        "sourceFilenameType": "msg",
+        "destPath": "inbounddir",
+        "destPathType": "msg",
+        "destFilename": "file",
+        "destFilenameType": "msg",
+        "link": false,
+        "overwrite": true,
+        "x": 3720,
+        "y": 540,
+        "wires": [
+            []
         ]
     },
     {
