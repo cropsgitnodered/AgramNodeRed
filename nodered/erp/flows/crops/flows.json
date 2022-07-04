@@ -15582,7 +15582,7 @@
         "fieldType": "flow",
         "format": "handlebars",
         "syntax": "mustache",
-        "template": "Select distinct Inbound.ID as InboundID from OBJT_INBOUNDORDER as Inbound with (nolock)\nleft join OBJT_INBOUNDOPERATION as InboundLines with (nolock) on InboundLines.INBOUNDORDEROID = Inbound.OID\nleft join OBJT_INBOUNDITEMQTY as InboundQty with (nolock) on InboundQty.INBOUNDOPERATIONOID = InboundLines.OID\nleft join OBJT_ITEM as Item with (nolock) on Item.OID = InboundQty.ITEMOID\nwhere InboundQty.QTYTARGET > InboundQty.VALUE and Item.CATEGORY = 'ZFRE' and Inbound.STATUS <= 3 and Inbound.DTSDUEBEFORE < dateadd(DD,-1,getdate())",
+        "template": "Select distinct Inbound.ID as InboundID from OBJT_INBOUNDORDER as Inbound with (nolock)\nleft join OBJT_INBOUNDOPERATION as InboundLines with (nolock) on InboundLines.INBOUNDORDEROID = Inbound.OID\nleft join OBJT_INBOUNDITEMQTY as InboundQty with (nolock) on InboundQty.INBOUNDOPERATIONOID = InboundLines.OID\nleft join OBJT_ITEM as Item with (nolock) on Item.OID = InboundQty.ITEMOID\nwhere InboundQty.QTYTARGET > InboundQty.VALUE and Item.CATEGORY = 'ZFRE' and Inbound.STATUS <= 3 and Inbound.PRERECEIPTSTATUS < 10 \nand Inbound.DTSDUEBEFORE < dateadd(DD,-1,getdate())",
         "output": "str",
         "x": 500,
         "y": 240,
